@@ -26,6 +26,7 @@ vorbis:
 
 alure:
 	./get-src alure 'http://kcat.strangesoft.net/alure-releases/alure-1.2.tar.bz2'
+	patch -u alure/CMakeLists.txt alure-CMakeLists.txt.diff
 
 zlib:
 	./get-src zlib 'http://zlib.net/zlib-1.2.8.tar.gz'
