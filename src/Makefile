@@ -27,7 +27,7 @@ vorbis:
 
 alure:
 	./get-src alure 'http://kcat.strangesoft.net/alure-releases/alure-1.2.tar.bz2'
-	patch -u alure/CMakeLists.txt alure-CMakeLists.txt.diff
+	patch -u alure/CMakeLists.txt alure-CMakeLists.txt.patch
 
 zlib:
 	./get-src zlib 'http://zlib.net/zlib-1.2.8.tar.gz'
@@ -40,6 +40,8 @@ lua:
 
 lua-cjson:
 	./get-src lua-cjson 'https://github.com/mpx/lua-cjson/archive/2.1.0.tar.gz'
+	patch -u lua-cjson/CMakeLists.txt lua-cjson-CMakeLists.txt.patch
+	cp lua_cjson.h lua-cjson/
 
 glfw:
 	./get-src glfw 'https://github.com/glfw/glfw/releases/download/3.1.1/glfw-3.1.1.zip'
