@@ -37,7 +37,7 @@ url  = sys.argv[2]
 
 archive = re.search('[^/]+$', url).group(0)
 
-subprocess.check_call(['wget', '-q', '--show-progress', url])
+subprocess.check_call(['wget', url])
 if not os.path.isfile(archive):
     raise RuntimeError(archive+' doesn\'t exist.')
 
