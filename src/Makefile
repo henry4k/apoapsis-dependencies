@@ -1,4 +1,4 @@
-GENERATED = .gitignore openal-soft ogg vorbis alure zlib physfs lua lua-cjson glfw bullet
+GENERATED = .gitignore openal-soft ogg vorbis alure zlib physfs lua lua-cjson glfw bullet glm
 
 all: $(GENERATED)
 
@@ -45,3 +45,6 @@ glfw:
 
 bullet:
 	./get-src bullet 'https://github.com/bulletphysics/bullet3/archive/2.83.6.tar.gz'
+
+glm:
+	./get-src glm 'https://github.com/g-truc/glm/releases/download/0.9.7.1/glm-0.9.7.1.zip'

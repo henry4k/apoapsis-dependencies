@@ -74,6 +74,10 @@ package: cleaned-bullet-src build/openal-soft build/ogg build/vorbis build/alure
 	cp -R cleaned-bullet-src/* $@/
 	cp bullet-LICENSE.txt $@/licenses/bullet.txt
 	cp build/bullet/lib/*.a $@/
+	# glm:
+	cp src/glm/copying.txt $@/licenses/glm.txt
+	cp -R src/glm/glm $@/glm
+	rm $@/glm/CMakeLists.txt
 
 package.tar.gz:
 	tar czvf $@ -C package .
