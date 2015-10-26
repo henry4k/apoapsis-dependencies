@@ -68,8 +68,7 @@ package: cleaned-bullet-src build/openal-soft build/ogg build/vorbis build/alure
 	cp build/lua-cjson/cjson.a $@/liblua-cjson.a
 	# glfw:
 	cp src/glfw/COPYING.txt $@/licenses/glfw.txt
-	cp src/glfw/src/*.h $@/
-	cp build/glfw/src/*.h $@/
+	cp -R src/glfw/include/GLFW $@/GLFW
 	cp build/glfw/src/libglfw3.a $@/libglfw.a
 	# bullet:
 	cp -R cleaned-bullet-src/* $@/
