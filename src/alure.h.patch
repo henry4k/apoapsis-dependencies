@@ -1,0 +1,10 @@
+--- old/alure.h	2011-07-29 10:37:48.000000000 +0200
++++ new/alure.h	2015-10-27 16:26:24.903954518 +0100
+@@ -24,6 +24,7 @@
+ #define ALURE_VERSION_1_1
+ #define ALURE_VERSION_1_2
+ 
++#define ALURE_STATIC_LIBRARY
+ 
+ #ifndef ALURE_API
+  #if defined(ALURE_STATIC_LIBRARY)
