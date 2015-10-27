@@ -57,7 +57,7 @@ define build-autotools
 	rm -rf $@
 	cp -R $(ROOT)/src/$@ $@
 	cd $@ && ./configure $(AUTOTOOLS_ARGS)
-	cd $@ && $(MAKE)
+	cd $@ && make
 endef
 
 openal-soft: toolchain.cmake
