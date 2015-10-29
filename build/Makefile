@@ -57,6 +57,7 @@ define build-autotools
 	rm -rf $@
 	cp -R $(ROOT)/src/$@ $@
 	cd $@ && ./configure $(AUTOTOOLS_ARGS)
+	cd $@ && touch Makefile.in # Workaround for a weird timing bug .. or so
 	cd $@ && make
 endef
 
