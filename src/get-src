@@ -17,6 +17,9 @@ def unpack_archive( archive, destname ):
         else:
             raise RuntimeError(archive+' has an unknown archive format.')
 
+        if os.path.exists(destname):
+            shutil.rmtree(destname)
+
         entries = os.listdir(tempdir)
         if len(entries) == 1:
             entrypath = os.path.join(tempdir, entries[0])
