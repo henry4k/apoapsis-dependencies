@@ -76,6 +76,8 @@ package: Makefile cleaned-bullet-src $(addprefix build/,$(filter-out glm,$(LIB_N
 	cp src/glm/copying.txt $@/licenses/glm.txt
 	cp -R src/glm/glm $@/glm
 	rm $@/glm/CMakeLists.txt
+	# extra:
+	cp $(EXTRA_FILES) $@/
 
 package.tar.gz: Makefile package
 	tar czvf $@ -C package .
