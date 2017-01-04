@@ -1,5 +1,5 @@
 GENERATED = .gitignore cleaned-bullet-src package package.tar.gz
-LIB_NAMES = openal-soft ogg vorbis alure zlib physfs lua lua-cjson glfw bullet glm
+C_LIB_NAMES = openal-soft ogg vorbis alure zlib physfs lua lua-cjson glfw bullet
 
 all: package.tar.gz
 
@@ -23,7 +23,10 @@ cleaned-bullet-src: Makefile src/bullet
 	rm -rf $@/Bullet3*
 	rm -rf $@/clew
 
-package: Makefile cleaned-bullet-src $(addprefix build/,$(filter-out glm,$(LIB_NAMES))) src/glm
+package: Makefile \
+         cleaned-bullet-src \
+         $(addprefix build/,$(C_LIB_NAMES)) \
+         src/glm
 	rm -rf $@
 	mkdir $@
 	mkdir $@/licenses
@@ -77,7 +80,9 @@ package: Makefile cleaned-bullet-src $(addprefix build/,$(filter-out glm,$(LIB_N
 	cp -R src/glm/glm $@/glm
 	rm $@/glm/CMakeLists.txt
 	# extra:
-	cp $(EXTRA_FILES) $@/
+	if [ -n "$(EXTRA_FILES)" ]; then \
+	    cp $(EXTRA_FILES) $@/ ; \
+	fi
 
 package.tar.gz: Makefile package
 	tar czvf $@ -C package .
