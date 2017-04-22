@@ -21,6 +21,7 @@ src/zlib:
 
 src/physfs:
 	$(GET_SRC) $@ 'http://icculus.org/physfs/downloads/physfs-2.0.3.tar.bz2'
+	patch -u $@/CMakeLists.txt src/physfs-CMakeLists.txt.patch
 
 src/lua:
 	$(GET_SRC) $@ 'http://www.lua.org/ftp/lua-5.2.4.tar.gz'
