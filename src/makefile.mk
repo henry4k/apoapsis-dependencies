@@ -17,7 +17,7 @@ src/alure: src/alure-CMakeLists.txt.patch src/alure.h.patch
 	patch -u $@/include/AL/alure.h src/alure.h.patch
 
 src/zlib:
-	$(GET_SRC) $@ 'http://zlib.net/zlib-1.2.10.tar.gz'
+	$(GET_SRC) $@ 'http://zlib.net/zlib-1.2.11.tar.gz'
 
 src/physfs:
 	$(GET_SRC) $@ 'http://icculus.org/physfs/downloads/physfs-2.0.3.tar.bz2'
